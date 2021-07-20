@@ -21,6 +21,13 @@ else()
                           -DCMAKE_SHARED_LINKER_FLAGS=${CMAKE_SHARED_LINKER_FLAGS}
                           -DCMAKE_MODULE_LINKER_FLAGS=${CMAKE_MODULE_LINKER_FLAGS}
                           -DCMAKE_EXE_LINKER_FLAGS=${CMAKE_EXE_LINKER_FLAGS}
+                          # Necessary variables for cross-compiling with clang
+                          -DCMAKE_C_COMPILER_TARGET=${CMAKE_C_COMPILER_TARGET}
+                          -DCMAKE_CXX_COMPILER_TARGET=${CMAKE_CXX_COMPILER_TARGET}
+                          -DCMAKE_ASM_COMPILER_TARGET=${CMAKE_ASM_COMPILER_TARGET}
+                          -DCMAKE_C_COMPILER_EXTERNAL_TOOLCHAIN=${CMAKE_C_COMPILER_EXTERNAL_TOOLCHAIN}
+                          -DCMAKE_CXX_COMPILER_EXTERNAL_TOOLCHAIN=${CMAKE_CXX_COMPILER_EXTERNAL_TOOLCHAIN}
+                          -DCMAKE_ASM_COMPILER_EXTERNAL_TOOLCHAIN=${CMAKE_ASM_COMPILER_EXTERNAL_TOOLCHAIN}
                           -DCMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PREFIX})
 endif()
 
